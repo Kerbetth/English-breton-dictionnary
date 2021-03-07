@@ -16,6 +16,5 @@ import javax.persistence.*;
 @AllArgsConstructor
 public class Verb extends Word{
 
-    String infinitive;
     String passive;
 }

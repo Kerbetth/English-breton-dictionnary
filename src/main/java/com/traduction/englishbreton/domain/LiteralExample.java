@@ -6,11 +6,12 @@ import com.sun.istack.NotNull;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-@Table(name = "COMMONNOUN")
+@Table(name = "LITERALEXAMPLE")
 @EqualsAndHashCode(of = "id")
-public class LiteralExample {
+public class LiteralExample implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

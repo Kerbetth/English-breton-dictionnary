@@ -2,6 +2,7 @@ package com.traduction.englishbreton.dto;
 
 
 
+import com.traduction.englishbreton.domain.Definition;
 import com.traduction.englishbreton.domain.LiteralExample;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,13 +24,12 @@ public class WordCreation {
 
     /** verbs variable**/
     String passive;
-    String infinitive;
 
     /** adjectives variable**/
     String quality;
 
     int year;
-    List<String> definition;
+    List<Definition> definitions;
     Set<LiteralExample> literalExamples;
     Set<Long> otherLanguageWordIds;
     String phonetics;

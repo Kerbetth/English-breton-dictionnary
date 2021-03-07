@@ -8,27 +8,79 @@
 <div th:replace="header :: header">
 </div>
 <div class="greyAddressLayout">
-    <p><a href="/userHome">Home</a> / <a href="/userHome/profile">Profile</a> / <a href="/userHome/bankAccount/add">Add Bank Account</a></p>
+    <p><a href="/userHome">Home</a> / <a href="/userHome/profile">Profile</a> / <a href="/userHome/bankAccount/add">Add
+        Bank Account</a></p>
 </div>
 <body>
 <div class="container">
 
     <h2>Add a Word.</h2>
-    <form name='f' th:object="${bankAccount}" th:action="@{/userHome/bankAccount/adding}" method="post">
+    <form name='f' th:object="${wordCreation}" th:action="@{/userHome/wordCreation/adding}" method="post">
         <table>
             <tr>
-                <td>Name of your bank account:</td>
+                <td>Write the word:</td>
                 <td>
-                    <input type="text" id="accountName" placeholder="accountName" class="form-control"
-                           th:field="*{accountName}"/>
+                    <input type="text" id="word" placeholder="word" class="form-control"
+                           th:field="*{word}"/>
                 </td>
             </tr>
             <tr>
-                <td>IBAN of your bank account:</td>
+                <td>Language of the word:</td>
                 <td>
-                    <input type="text" id="accountIban" placeholder="accountIban" class="form-control"
-                           th:field="*{accountIban}"/>
+                    <select th:field="*{language}">
+                        <option th:value=1 th:text="Breton"></option>
+                        <option th:value=2 th:text="English"></option>
+                        <option th:value=2 th:text="French"></option>
+                    </select>
                 </td>
+            </tr>
+            <tr>
+                <td>Part of Speech:</td>
+                <td>
+                    <select th:field="*{partOfSpeech}">
+                        <option th:value=1 th:text="Common noun"></option>
+                        <option th:value=2 th:text="Verb"></option>
+                        <option th:value=3 th:text="Adjective"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Plural form (Common noun):</td>
+                <td>
+                    <input type="text" id="plural" placeholder="plural" class="form-control"
+                           th:field="*{plural}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Gender (Common noun):</td>
+                <td>
+                    <input type="text" id="gender" placeholder="gender" class="form-control"
+                           th:field="*{gender}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Passed form (Verb):</td>
+                <td>
+                    <input type="text" id="passed" placeholder="passed" class="form-control"
+                           th:field="*{passed}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Quality (Adjective):</td>
+                <td>
+                    <input type="text" id="quality" placeholder="quality" class="form-control"
+                           th:field="*{quality}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Phonetics:</td>
+                <td>
+                    <input type="text" id="phonetic" placeholder="phonetic" class="form-control"
+                           th:field="*{phonetic}"/>
+                </td>
+            </tr>
+            <tr th:each="definition, i : ${wordCreation.definitions}">
+                <td><input type="text" class="form-control" placeholder="Enter a definition" th:field="*{definitions[__${i.index}__].hoursWorked}"></td>
             </tr>
             <tr class="row">
                 <td>
@@ -40,4 +92,3 @@
 </div>
 </body>
 </html>
-

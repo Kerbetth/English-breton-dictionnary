@@ -29,6 +29,7 @@ public class WordManagementService {
     /**
      * -addABankAccount(BankAccount) link a bankAccount IBAN to the userAccount in order to withdrawing and depositing money
      */
+
     public boolean addAWord(WordCreation wordCreation) {
         if (wordRepository.findByWord(wordCreation.getWord()).isEmpty()) {
             Word word = new Word();
@@ -37,7 +38,7 @@ public class WordManagementService {
                     word = new CommonNoun(wordCreation.getPlural(), wordCreation.getGender());
                     break;
                 case 2:
-                    word = new Verb(wordCreation.getInfinitive(), wordCreation.getPassive());
+                    word = new Verb( wordCreation.getPassive());
                     break;
                 case 3:
                     word = new Adjective(wordCreation.getQuality());

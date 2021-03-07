@@ -10,7 +10,7 @@ import java.util.Set;
 
 @Repository
 public interface WordRepository extends CrudRepository<Word, Long> {
-    List<Word> findByWordDerivation(Word word);
+    List<Word> findByWord(Word word);
     Optional<Word> findByWord(String word);
     Optional<Word> findById(Long id);
 }

@@ -8,15 +8,16 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "WORD")
+@Table(name = "OPDESCRIPTION")
 @EqualsAndHashCode(of = "id")
 @Getter
 @Setter
-public class OpDescription {
+public class OpDescription implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +26,7 @@ public class OpDescription {
     String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "commonNoun_id", referencedColumnName="id")
+    @JoinColumn(name = "word_id", referencedColumnName="id")
     @NotNull
     private Word word;
 

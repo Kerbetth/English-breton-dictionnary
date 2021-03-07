@@ -23,11 +23,11 @@ public class HomeControllers {
     public String getLog(Model model) {
         return "LogPage";
     }
-
+/*
     @GetMapping("/userHome")
     public String userPage(Model model) {
             model.addAttribute("userAccount", historicService.getLastDescriptions());
             return "UserPage";
     }
-
+*/
 }

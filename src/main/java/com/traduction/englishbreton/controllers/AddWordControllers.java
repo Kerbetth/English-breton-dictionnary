@@ -25,7 +25,7 @@ public class AddWordControllers {
         return "WordCreation";
     }
 
-    @PostMapping(value = "/userHome/bankAccount/adding")
+    @PostMapping(value = "/userHome/wordCreation/adding")
     public String addingABankAccount(WordCreation wordCreation) {
         if (!wordManagementService.addAWord(wordCreation)) {
             return "redirect:/userHome/wordCreation/add";

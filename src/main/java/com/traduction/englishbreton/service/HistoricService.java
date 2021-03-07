@@ -6,8 +6,6 @@ import com.traduction.englishbreton.domain.pos.Adjective;
 import com.traduction.englishbreton.domain.pos.CommonNoun;
 import com.traduction.englishbreton.domain.pos.Verb;
 import com.traduction.englishbreton.dto.WordCreation;
-import com.traduction.englishbreton.repositories.HistoricRepository;
-import com.traduction.englishbreton.repositories.WordRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,18 +20,18 @@ import java.util.Set;
 @Service
 @Slf4j
 public class HistoricService {
-
-    @Autowired
+/**    @Autowired
     protected HistoricRepository historicRepository;
 
 
     /**
      * -addABankAccount(BankAccount) link a bankAccount IBAN to the userAccount in order to withdrawing and depositing money
      */
+/**
     public List<OpDescription> getLastDescriptions() {
         List<OpDescription> listOp = new ArrayList<>();
         listOp.add(new OpDescription());
         return listOp;
     }
-
+    **/
 }
